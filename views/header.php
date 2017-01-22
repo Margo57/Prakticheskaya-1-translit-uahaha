@@ -3,10 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <title>Test</title>
-  <link rel="stylesheet" href="public/css/default.css">
+  <link rel="stylesheet" href="<?php echo URL;?>public/css/default.css">
 </head>
 <body>
 <header>
-  header
+  <nav>
+    <ul>
+      <li><a href="index">Index</a></li>
+      <li><a href="help">Help</a></li>
+      <li><a href="login">Login</a></li>
+    </ul>
+  </nav>
 </header>
 <section>
