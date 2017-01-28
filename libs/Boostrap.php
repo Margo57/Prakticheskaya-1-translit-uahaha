@@ -9,7 +9,10 @@
 
       if (empty($url['0'])) {
         require 'controllers/index.php';
+
         $controller = new Index();
+        $controller->index();
+        
         return false;
       }
 
@@ -22,13 +25,23 @@
         $controller = new Error();
         return false;
       }
-      $controller = new $url[0]; //создаём объект этого контроллера
+      
+      $controller = new $url[0];
+      $controller->loadModel($url[0]);
 
-      if (isset($url[2])) {
-        $controller -> $url[1]($url[2]);
-      } else if (isset($url[1])) {
-        $controller -> $url[1]();
-      }
+if(isset($url[2])) {
+  if(method_exists($controller, $url[1])) {
+   $controller->{$url[1]}($url[2]);
+  } else {
+   echo 'Error!';
+  }
+} else {
+  if(isset($url[1])) {
+   $controller->{$url[1]}();
+  } else {
+   $controller->index();
+  }
+}
 
     }
   }
