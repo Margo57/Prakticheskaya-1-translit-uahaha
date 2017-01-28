@@ -3,11 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <title>Test</title>
-  <link rel="stylesheet" href="<?php echo URL;?>public/css/default.css">
+  <link rel="stylesheet" href="public/css/default.css">
 </head>
 <body>
 <?php Session::init(); ?>
 <header>
+<<<<<<< HEAD
   <nav>
     <ul>
       <li><a href="<?php echo URL; ?>index">Index</a></li>
@@ -22,5 +23,8 @@
       </li>
     </ul>
   </nav>
+=======
+  header
+>>>>>>> parent of 6d02d5a... Начинается какая-то дичь с контроллерами.
 </header>
 <section>
